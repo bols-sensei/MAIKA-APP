@@ -1,4 +1,4 @@
-# Maïka App — Front-end prototype (sans React)
+# Maïka App — Front-end prototype 
 
 Maquette interactive responsive réalisée en HTML, CSS et JavaScript natifs.
 

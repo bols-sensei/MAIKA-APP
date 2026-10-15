@@ -1,0 +1,10 @@
+{
+  "name": "Maïka App",
+  "short_name": "Maïka",
+  "description": "Formations, ressources et opportunités de la Fondation Maïka",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f7f9fd",
+  "theme_color": "#075bea",
+  "lang": "fr"
+}

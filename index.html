@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#075bea">
+  <meta name="description" content="Maïka App — Formations, ressources et opportunités pour construire votre avenir.">
+  <title>Maïka App — Apprendre aujourd’hui, construire demain</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" data-page="home"><span class="brand-mark">M</span><span>Maïka <b>App</b></span></a>
+      <div class="side-label">MENU PRINCIPAL</div>
+      <nav class="nav-list">
+        <button class="nav-link active" data-page="home"><span>⌂</span> Accueil</button>
+        <button class="nav-link" data-page="courses"><span>▤</span> Formations</button>
+        <button class="nav-link" data-page="news"><span>▧</span> Actualités</button>
+        <button class="nav-link" data-page="resources"><span>▣</span> Ressources</button>
+        <button class="nav-link" data-page="opportunities"><span>✧</span> Opportunités</button>
+        <button class="nav-link" data-page="about"><span>ⓘ</span> À propos</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="help-card"><div class="help-icon">✦</div><strong>Besoin d’aide ?</strong><p>Nous sommes là pour vous accompagner.</p><button class="text-button" data-page="about">Contacter la Fondation ↗</button></div>
+        <button class="nav-link" data-page="admin"><span>⚙</span> Aperçu responsable</button>
+      </div>
+      <div class="sidebar-foot">© 2026 Fondation Maïka</div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu icon-button" id="menuToggle" aria-label="Ouvrir le menu">☰</button>
+        <div class="breadcrumb"><span>Maïka App</span><span class="crumb-sep">/</span><strong id="pageCrumb">Accueil</strong></div>
+        <div class="top-actions">
+          <button class="icon-button" aria-label="Notifications" id="notificationButton">♧<i class="notification-dot"></i></button>
+          <button class="signin-button" id="signinButton">Se connecter</button>
+          <button class="primary-button small" id="createAccountButton">Créer un compte</button>
+          <button class="profile-button" id="profileButton" hidden><span class="avatar">AK</span><span class="profile-name">Aïssatou K.</span><span>⌄</span></button>
+        </div>
+      </header>
+
+      <div class="page-wrap">
+        <section class="page active" id="page-home">
+          <div class="hero">
+            <div class="hero-content">
+              <span class="eyebrow light">VOTRE AVENIR COMMENCE ICI</span>
+              <h1>Apprendre aujourd’hui,<br>construire demain.</h1>
+              <p>Des formations, des ressources et des opportunités pour développer vos compétences et réaliser vos projets.</p>
+              <form class="search-box" id="heroSearch"><span>⌕</span><input id="searchInput" type="search" placeholder="Rechercher une formation..."><button aria-label="Rechercher">→</button></form>
+              <div class="hero-meta"><span>✓ Des compétences pour avancer</span><span>✓ Des opportunités pour agir</span></div>
+            </div>
+            <div class="hero-photo" role="img" aria-label="Étudiante souriante avec des livres"><div class="photo-tag"><span class="tag-star">✦</span><div><strong>Votre prochain chapitre</strong><small>commence maintenant</small></div></div></div>
+            <div class="hero-orb orb-one"></div><div class="hero-orb orb-two"></div>
+          </div>
+
+          <div class="section-heading">
+            <div><span class="eyebrow">EXPLOREZ</span><h2>Que souhaitez-vous apprendre ?</h2><p>Choisissez un domaine et faites le premier pas.</p></div>
+          </div>
+          <div class="category-grid">
+            <button class="category-card" data-category="Informatique"><span class="category-icon blue">⌘</span><strong>Informatique</strong><small>Outils et numérique</small></button>
+            <button class="category-card" data-category="Développement personnel"><span class="category-icon coral">♡</span><strong>Développement personnel</strong><small>Confiance et leadership</small></button>
+            <button class="category-card" data-category="Langues"><span class="category-icon purple">文</span><strong>Langues</strong><small>Communiquer autrement</small></button>
+            <button class="category-card" data-category="Entrepreneuriat"><span class="category-icon green">↗</span><strong>Entrepreneuriat</strong><small>Donner vie à vos idées</small></button>
+            <button class="category-card" data-category="Métiers techniques"><span class="category-icon orange">⚒</span><strong>Métiers techniques</strong><small>Des savoir-faire utiles</small></button>
+            <button class="category-card" data-category="Autres"><span class="category-icon lilac">✣</span><strong>Autres domaines</strong><small>Découvrez nos contenus</small></button>
+          </div>
+
+          <div class="section-heading section-heading-row">
+            <div><span class="eyebrow">À DÉCOUVRIR</span><h2>Formations en vedette</h2><p>Des parcours pour apprendre à votre rythme.</p></div>
+            <button class="text-button" data-page="courses">Voir toutes les formations <span>→</span></button>
+          </div>
+          <div class="course-grid" id="featuredCourses"></div>
+
+          <section class="wide-cta">
+            <div class="cta-symbol">✦</div><div><span class="eyebrow light">FAITES LE PREMIER PAS</span><h2>Chaque compétence ouvre une porte.</h2><p>Explorez les formations et trouvez le parcours qui vous correspond.</p></div><button class="white-button" data-page="courses">Explorer les formations <span>→</span></button>
+          </section>
+          <div class="section-heading section-heading-row compact-heading"><div><span class="eyebrow">RESTEZ INFORMÉ</span><h2>Actualités & opportunités</h2></div><button class="text-button" data-page="news">Tout voir →</button></div>
+          <div class="news-grid" id="homeNews"></div>
+          <footer class="main-footer"><span>© 2026 Fondation Maïka. Tous droits réservés.</span><span>Apprendre · Grandir · Réussir</span></footer>
+        </section>
+
+        <section class="page" id="page-courses">
+          <div class="page-title"><div><span class="eyebrow">APPRENDRE À VOTRE RYTHME</span><h1>Catalogue des formations</h1><p>Découvrez un parcours, développez une compétence et avancez vers vos objectifs.</p></div><div class="title-badge">✦ <span>Votre avenir en mouvement</span></div></div>
+          <div class="filter-bar"><label class="search-field"><span>⌕</span><input id="catalogSearch" type="search" placeholder="Rechercher une formation..."></label><select id="categoryFilter"><option value="">Toutes les catégories</option><option>Informatique</option><option>Développement personnel</option><option>Entrepreneuriat</option><option>Métiers techniques</option><option>Langues</option></select><select id="typeFilter"><option value="">Tous les formats</option><option value="En ligne">En ligne</option><option value="Présentiel">Présentiel</option></select></div>
+          <div class="result-line"><span id="courseCount">6 formations disponibles</span><span>Mis à jour récemment</span></div>
+          <div class="course-grid catalog-grid" id="catalogCourses"></div>
+        </section>
+
+        <section class="page" id="page-lesson">
+          <div class="lesson-header"><button class="back-button" data-page="courses">← Retour au catalogue</button><span class="status-pill status-blue">FORMATION EN LIGNE</span></div>
+          <div class="lesson-layout">
+            <aside class="lesson-sidebar"><div class="lesson-course-title"><small>VOTRE FORMATION</small><h3 id="lessonCourseName">Développement personnel</h3><div class="progress-line"><span id="lessonProgressBar"></span></div><small id="lessonProgressText">40 % terminé</small></div><div class="module-title">CONTENU DU PARCOURS</div><button class="lesson-item done"><span class="lesson-check">✓</span><span><b>Bienvenue dans le parcours</b><small>Introduction · 4 min</small></span></button><button class="lesson-item selected"><span class="lesson-play">▶</span><span><b>Les principes de base</b><small>Vidéo · 12 min</small></span></button><button class="lesson-item"><span class="lesson-play">▷</span><span><b>Outils et méthodes</b><small>Document · 8 min</small></span></button><button class="lesson-item"><span class="lesson-number">4</span><span><b>Évaluation du module</b><small>10 questions</small></span></button></aside>
+            <div class="lesson-main"><div class="lesson-title-row"><div><span class="eyebrow">MODULE 2 · LEÇON 2</span><h1 id="lessonTitle">Gérer son temps efficacement</h1><p>Apprenez à organiser vos priorités et à avancer avec méthode.</p></div><button class="icon-button" title="Ajouter aux favoris">♡</button></div>
+              <div class="video-frame"><div class="video-shade"></div><div class="video-play" id="videoPlay">▶</div><div class="video-label"><span>MAÏKA LEARNING</span><small>Votre apprentissage, votre rythme.</small></div><div class="video-controls"><span>▶</span><div class="fake-timeline"><i></i></div><span>12:48</span><span>⚙</span><span>⛶</span></div></div>
+              <div class="lesson-tabs"><button class="tab-button active" data-tab="description">À propos de la leçon</button><button class="tab-button" data-tab="notes">Mes notes</button><button class="tab-button" data-tab="resources">Ressources</button></div>
+              <div class="tab-content" id="lessonTabContent"><p>Dans cette leçon, vous découvrirez des techniques simples pour mieux gérer votre temps, hiérarchiser vos tâches et préserver votre énergie.</p><ul><li>Identifier les priorités de la journée.</li><li>Découper un objectif en étapes concrètes.</li><li>Créer une routine adaptée à votre rythme.</li></ul></div>
+              <div class="lesson-bottom"><span>Leçon 2 sur 8</span><button class="primary-button" id="completeLesson">Marquer comme terminée →</button></div>
+            </div>
+            <aside class="lesson-right"><div class="side-panel"><h3>Votre progression</h3><div class="big-progress"><div class="progress-ring"><span id="progressPercent">40%</span></div><div><strong>Continuez ainsi !</strong><small>Vous êtes sur la bonne voie.</small></div></div><div class="module-progress"><div><span>Module 1</span><b>100%</b></div><div class="mini-progress"><i style="width:100%"></i></div><div><span>Module 2</span><b id="moduleTwoPercent">40%</b></div><div class="mini-progress"><i id="moduleTwoBar" style="width:40%"></i></div><div><span>Module 3</span><b>0%</b></div><div class="mini-progress"><i style="width:0%"></i></div></div></div><div class="side-panel certificate-panel"><span class="certificate-icon">✓</span><h3>Votre certificat</h3><p>Terminez les modules et réussissez l’évaluation finale pour obtenir votre certificat.</p><button class="outline-button" data-page="certificates">Voir mes certificats</button></div></aside>
+          </div>
+        </section>
+
+        <section class="page" id="page-certificates">
+          <div class="page-title"><div><span class="eyebrow">VOS RÉUSSITES</span><h1>Mes certificats</h1><p>Retrouvez ici les certificats obtenus après validation de vos formations.</p></div></div>
+          <div class="empty-state" id="certificateEmpty"><div class="empty-illustration">✧</div><h2>Votre prochain accomplissement vous attend</h2><p>Après avoir terminé une formation et réussi son évaluation, votre certificat apparaîtra ici.</p><button class="primary-button" data-page="courses">Découvrir les formations</button></div>
+          <div class="certificate-preview-wrap" id="certificatePreview" hidden><div class="certificate-paper"><div class="certificate-emblem">M</div><span>FONDATION MAÏKA</span><h2>CERTIFICAT DE FORMATION</h2><p>Ce certificat est décerné à</p><h1>Aïssatou Kabasélé</h1><p>pour avoir suivi avec succès la formation</p><h3>Développement personnel</h3><div class="certificate-meta"><span>Date de délivrance<br><b>15 octobre 2026</b></span><span>Identifiant du certificat<br><b>MK-2026-00186</b></span></div><div class="certificate-signature">La Fondation Maïka</div></div><button class="primary-button" id="downloadCertificate">↓ Télécharger le certificat (PDF)</button></div>
+        </section>
+
+        <section class="page" id="page-admin">
+          <div class="admin-welcome"><div><span class="eyebrow">ESPACE DE GESTION</span><h1>Bonjour, Responsable 👋</h1><p>Voici un aperçu de votre plateforme aujourd’hui.</p></div><button class="primary-button" id="newCourseButton">＋ Nouvelle formation</button></div>
+          <div class="stats-grid"><div class="stat-card"><span class="stat-icon blue">▤</span><small>Formations</small><strong>12</strong><span class="stat-note">8 publiées · 4 brouillons</span></div><div class="stat-card"><span class="stat-icon green">♙</span><small>Inscriptions</small><strong>248</strong><span class="stat-positive">↗ +12 cette semaine</span></div><div class="stat-card"><span class="stat-icon orange">◷</span><small>Paiements en attente</small><strong id="pendingPaymentsCount">5</strong><span class="stat-note">À vérifier</span></div><div class="stat-card"><span class="stat-icon purple">♧</span><small>Certificats délivrés</small><strong>186</strong><span class="stat-positive">Ce mois-ci</span></div></div>
+          <div class="admin-panels"><div class="panel-card"><div class="panel-heading"><div><h2>Formations récentes</h2><p>Gérez vos contenus pédagogiques.</p></div><button class="text-button" data-page="courses">Tout voir →</button></div><div class="table-wrap"><table><thead><tr><th>Formation</th><th>Format</th><th>Statut</th><th>Inscrits</th></tr></thead><tbody id="adminCourseRows"></tbody></table></div><div class="upload-box"><div class="upload-icon">⇧</div><div><strong>Ajouter une vidéo à un cours</strong><p>Téléversez une vidéo ou ajoutez un lien externe.</p></div><button class="outline-button" id="videoManagerButton">Gérer les vidéos</button></div></div>
+            <div class="panel-card payment-panel"><div class="panel-heading"><div><h2>Demandes de paiement</h2><p>Vérification manuelle des justificatifs.</p></div><span class="count-badge">5</span></div><div id="paymentList"></div><button class="outline-button full-button" id="viewAllPayments">Voir toutes les demandes</button></div></div>
+          <div class="admin-panels lower-panels"><div class="panel-card"><div class="panel-heading"><div><h2>Contenus & ressources</h2><p>Continuez à enrichir la plateforme.</p></div></div><div class="admin-action-list"><button data-page="courses"><span class="action-icon blue">▤</span><span><b>Gérer les formations</b><small>Modules, leçons et évaluations</small></span><span>→</span></button><button id="videoManagerButton2"><span class="action-icon purple">▶</span><span><b>Bibliothèque vidéo</b><small>Téléversements et liens externes</small></span><span>→</span></button><button data-page="news"><span class="action-icon green">▧</span><span><b>Actualités & opportunités</b><small>Publiez des informations</small></span><span>→</span></button></div></div><div class="panel-card"><div class="panel-heading"><div><h2>Activité récente</h2><p>Les derniers événements de la plateforme.</p></div></div><div class="activity-list"><div><span class="activity-dot green-dot"></span><p><b>Nouvelle inscription</b><small>Il y a 12 minutes · Marketing digital</small></p></div><div><span class="activity-dot blue-dot"></span><p><b>Certificat généré</b><small>Il y a 48 minutes · Initiation à l’informatique</small></p></div><div><span class="activity-dot orange-dot"></span><p><b>Paiement à vérifier</b><small>Il y a 1 heure · Leadership et gestion d’équipe</small></p></div></div></div></div>
+        </section>
+
+        <section class="page" id="page-news"><div class="page-title"><div><span class="eyebrow">LA VIE DE LA FONDATION</span><h1>Actualités</h1><p>Suivez les actions, annonces et nouvelles de la Fondation Maïka.</p></div></div><div class="news-grid large-news-grid" id="newsPageGrid"></div></section>
+        <section class="page" id="page-resources"><div class="page-title"><div><span class="eyebrow">POUR ALLER PLUS LOIN</span><h1>Ressources</h1><p>Des contenus utiles pour accompagner votre apprentissage.</p></div></div><div class="resource-grid"><article class="resource-card"><span class="resource-icon blue">PDF</span><h3>Guide pour bien démarrer une formation</h3><p>Quelques conseils pratiques pour organiser votre apprentissage.</p><button class="text-button resource-open">Consulter la ressource →</button></article><article class="resource-card"><span class="resource-icon purple">✎</span><h3>Préparer son CV</h3><p>Structurez vos expériences et mettez en valeur vos compétences.</p><button class="text-button resource-open">Consulter la ressource →</button></article><article class="resource-card"><span class="resource-icon green">↗</span><h3>Développer son projet</h3><p>Des étapes simples pour transformer une idée en projet concret.</p><button class="text-button resource-open">Consulter la ressource →</button></article></div></section>
+        <section class="page" id="page-opportunities"><div class="page-title"><div><span class="eyebrow">PASSEZ À L’ACTION</span><h1>Opportunités</h1><p>Découvrez des pistes pour apprendre, entreprendre et faire évoluer vos projets.</p></div></div><div class="opportunity-list"><article><span class="opportunity-icon">✦</span><div><span class="status-pill status-green">FORMATION</span><h3>Atelier d’initiation au numérique</h3><p>Un parcours d’introduction pour mieux utiliser les outils numériques au quotidien.</p><small>Inscriptions selon les places disponibles</small></div><button class="outline-button" data-page="courses">Voir les formations</button></article><article><span class="opportunity-icon purple-bg">↗</span><div><span class="status-pill status-blue">ENTREPRENEURIAT</span><h3>Ressources pour porteurs de projets</h3><p>Retrouvez des contenus pour structurer votre idée et préparer les prochaines étapes.</p><small>Ressource en ligne</small></div><button class="outline-button" data-page="resources">Explorer</button></article></div></section>
+        <section class="page" id="page-about"><div class="about-hero"><span class="brand-mark large-mark">M</span><span class="eyebrow">FONDATION MAÏKA</span><h1>Apprendre. Grandir. Réussir.</h1><p>Maïka App rapproche les apprenants des formations, des ressources et des opportunités pour développer leur potentiel.</p></div><div class="about-grid"><div class="resource-card"><span class="category-icon blue">◎</span><h3>Notre mission</h3><p>Faciliter l’accès à l’apprentissage et accompagner chacun dans le développement de ses compétences.</p></div><div class="resource-card"><span class="category-icon green">✦</span><h3>Notre engagement</h3><p>Mettre à disposition des parcours accessibles, des ressources utiles et des informations fiables.</p></div></div></section>
+      </div>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="modalBackdrop" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" id="modalClose" aria-label="Fermer">×</button><div id="modalContent"></div></div>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
